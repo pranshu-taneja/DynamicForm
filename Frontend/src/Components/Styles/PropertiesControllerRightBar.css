@@ -1,5 +1,5 @@
 .PropertiesControllerRightBar{
-    flex: 0 1 30vw;
     background-color: cadetblue;
-    height: 100vh;
+    height: 95vh;
+    margin-top: 1rem;
 }

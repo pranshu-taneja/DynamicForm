@@ -1,4 +1,4 @@
-.BuildAreaWrapper{
+.BuildAreaWrapper {
     flex: 1 1 80vw;
     display: flex;
     flex-direction: row;
@@ -7,29 +7,33 @@
     height: 100vh;
 }
 
-.FormArea{
+.FormArea {
     color: black;
-    background-color: white;
+    background-color: wheat;
     margin: 1rem;
-    flex: 0 1 40rem;
+    flex: 1 1 40rem;
     overflow: scroll;
 }
 
-.InputElementWrapper{
-    margin: 0.5rem;
-    border: 1px solid grey;
+.InputElementWrapper {
+    margin: 1rem;
+    box-shadow: 5px 5px 10px darkgray;
     background-color: aliceblue;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.CoreElement{
+.CoreElement {
     padding: 0.5rem;
 }
 
-.handleConfig{
+.handleConfig {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+}
+
+.RenderProperties {
+    flex: 0 1 30vw;
 }

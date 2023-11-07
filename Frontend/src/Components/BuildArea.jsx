@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { ReactDOM, useState, useEffect } from "react";
 import "./Styles/BuildArea.css";
 import { TextInput, DropDown, RadioButton } from "../Utils/TypeConstants";
 import { AiFillSetting } from "react-icons/ai";
@@ -51,7 +51,12 @@ function RenderCoreElement(name, type, properties) {
 
 function BuildArea({ FormConfig, setFormConfig }) {
 
-  const [propertyVisibility, setPropertyVisibility] = useState(false)
+  const [activeProperty, setActiveProperty] = useState(0);
+
+  function handleSettingsClick(index) {
+    setActiveProperty(activeProperty === index ? activeProperty : index);
+  }
+
   return (
     <div className="BuildAreaWrapper">
       <div className="FormArea">
@@ -64,8 +69,10 @@ function BuildArea({ FormConfig, setFormConfig }) {
               </div>
               <div className="handleConfig">
                 <span onClick={() => {
-                  setPropertyVisibility(!propertyVisibility)
-                }}><AiFillSetting size={"1.5rem"} /></span>
+                  handleSettingsClick(index);
+                }}>
+                  <AiFillSetting size={"1.5rem"} />
+                </span>
                 <span><MdDelete size={"1.5rem"} />
                 </span>
               </div>
@@ -73,7 +80,9 @@ function BuildArea({ FormConfig, setFormConfig }) {
           );
         })}
       </div>
-      <PropertiesControllerRightBar visibility={propertyVisibility} />
+      <div className="RenderProperties">
+        <PropertiesControllerRightBar FormConfig={FormConfig} setFormConfig={setFormConfig} activePropertyIndex={activeProperty} />
+      </div>
     </div>
   );
 }

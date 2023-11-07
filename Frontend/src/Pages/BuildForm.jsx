@@ -16,12 +16,14 @@ function BuildForm() {
   useEffect(() => {
     function FetchStoredState() {
       const fetchedState = localStorage.getItem("state")
-      const state = JSON.parse(fetchedState);
-      setFormConfig(state);
+      if (fetchedState) {
+        const state = JSON.parse(fetchedState);
+        setFormConfig(state);
+      }
     }
     FetchStoredState();
   }, [])
-  
+
 
   return (
     <div className="HomeWrapper">

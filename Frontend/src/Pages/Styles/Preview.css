@@ -1,0 +1,21 @@
+.PreviewWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.navigateBuilderBtn{
+    background-color: #5860d7;
+}
+.FormWrapper{
+    background-color: white;
+    box-shadow: 20px 20px 10px grey;
+    width: 50vw;
+    padding: 2rem;
+    height: auto;
+    margin: 5rem;
+}

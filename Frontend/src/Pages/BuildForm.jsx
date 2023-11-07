@@ -12,9 +12,20 @@ function BuildForm() {
     printChange();
   }, [FormConfig]);
 
+
+  useEffect(() => {
+    function FetchStoredState() {
+      const fetchedState = localStorage.getItem("state")
+      const state = JSON.parse(fetchedState);
+      setFormConfig(state);
+    }
+    FetchStoredState();
+  }, [])
+  
+
   return (
     <div className="HomeWrapper">
-      <InputSelectorLeftbar setFormConfig={setFormConfig} />
+      <InputSelectorLeftbar FormConfig={FormConfig} setFormConfig={setFormConfig} />
 
       <BuildArea FormConfig={FormConfig} setFormConfig={setFormConfig} />
     </div>

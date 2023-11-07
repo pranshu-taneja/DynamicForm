@@ -4,7 +4,6 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import BuildForm from "./Pages/BuildForm";
 import Preview from "./Pages/Preview";
 function App() {
-  const [FormConfig, setFormConfig] = useState([{}]);
   return (
     <div>
       <BrowserRouter>

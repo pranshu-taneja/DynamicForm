@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Styles/PropertiesControllerRightBar.css";
 import { MdRemoveCircleOutline } from "react-icons/md"
-import { TextInput, DropDown, RadioButton } from "../Utils/TypeConstants";
+import { TextInput, DropDown, RadioButton, TextArea, CheckBoxes } from "../Utils/TypeConstants";
 
 function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setFormConfig }) {
   const type = FormConfig[activePropertyIndex]?.type;
@@ -50,6 +50,7 @@ function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setForm
       return copyFormConfig;
     })
   }
+
   //------------------- Controller Functions -------------------
 
   function RenderControllers() {
@@ -59,6 +60,41 @@ function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setForm
           <div className="PropertyControllerContainer">
 
             <section className="TextInputName">
+              <h2>{name}</h2>
+            </section>
+
+            <section className="controller changePlaceholder">
+              <label htmlFor="placeholder">Placeholder</label>
+              <input
+                id="placeholder"
+                type="text"
+                value={activeProperty.placeholder}
+                placeholder={activeProperty.placeholder}
+                onChange={(e) => {
+                  handlePlaceHolder(e);
+                }}
+              />
+            </section>
+
+            <section className="controller changeLabel">
+              <label htmlFor="label">Label</label>
+              <input
+                id="label"
+                type="text"
+                value={activeProperty.label}
+                onChange={(e) => {
+                  handleLabel(e);
+                }}
+              />
+            </section>
+          </div>
+        );
+      }
+      case TextArea: {
+        return (
+          <div className="PropertyControllerContainer">
+
+            <section className="TextAreaName">
               <h2>{name}</h2>
             </section>
 
@@ -162,6 +198,57 @@ function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setForm
             </section>
 
             <section className="controller changeRadioButtonOptions">
+              <label htmlFor="optionsPropertyLabel">Options</label>
+
+              <div className="addOptionByInput">
+                <input
+                  type="text"
+                  value={tempOptionInput}
+                  onChange={(e) => {
+                    setTempOptionInput(() => { return e.target.value })
+                  }}
+                  id="optionsPropertyLabel"
+                />
+                <button onClick={handleAddOptions}>Add</button>
+              </div>
+
+              {/* Rendering Already available options */}
+              <div className="controlDeleteOptionsContainer">
+                {activeProperty.options.map((option, index) => {
+                  return (
+                    <div key={index} className="controlSingleDelete">
+                      {option}
+                      <MdRemoveCircleOutline onClick={() => { handleDeleteOption(index) }} size={20} />
+                    </div>
+                  )
+                })}
+              </div>
+            </section>
+
+          </div>
+        );
+      }
+      case CheckBoxes: {
+        return (
+          <div className="PropertyControllerContainer">
+
+            <section className="CheckBoxesName">
+              <h2>{name}</h2>
+            </section>
+
+            <section className="controller changeLabel">
+              <label htmlFor="label">Question</label>
+              <input
+                id="label"
+                type="text"
+                value={activeProperty.label}
+                onChange={(e) => {
+                  handleLabel(e);
+                }}
+              />
+            </section>
+
+            <section className="controller changeCheckBoxesOptions">
               <label htmlFor="optionsPropertyLabel">Options</label>
 
               <div className="addOptionByInput">

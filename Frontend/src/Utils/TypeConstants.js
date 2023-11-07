@@ -1,5 +1,7 @@
 const TextInput = "TextInput";
 const DropDown = "DropDown";
-const RadioButton = "RadioBtn";
-
-export { TextInput, DropDown, RadioButton };
+const RadioButton = "RadioButton";
+const TextArea = "TextArea";
+const CheckBoxes = "CheckBoxes";
+ 
+export { TextInput, DropDown, RadioButton, TextArea, CheckBoxes };

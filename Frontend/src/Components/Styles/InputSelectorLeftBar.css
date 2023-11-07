@@ -1,8 +1,9 @@
 .InputSelectorLeftBarWrapper {
-    flex: 1 1 12vw;
+    flex: 1 1 15vw;
     overflow: scroll;
     background-color: chocolate;
-    height: 100vh;
+    height: 91vh;
+    padding: 2rem 0rem;
 }
 
 .InputTypeContainer {
@@ -17,4 +18,20 @@
 
 .addBtn:hover {
     background-color: darkgray;
+}
+
+.PreviewButton {
+    background-color: #5860d7;
+}
+
+.SaveButton {
+    background-color: #5860d7;
+}
+
+.previewSave {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem;
+    justify-content: center;
+    gap: 1rem;
 }

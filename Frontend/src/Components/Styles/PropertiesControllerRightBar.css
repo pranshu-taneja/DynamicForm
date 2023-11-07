@@ -1,5 +1,51 @@
-.PropertiesControllerRightBar{
+.PropertiesControllerRightBar {
+    flex: 0 1 30vw;
     background-color: cadetblue;
+    overflow: scroll;
     height: 95vh;
     margin-top: 1rem;
+}
+
+.PropertyControllerContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.addOptionByInput {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.controller {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+    align-items: start;
+    padding: 2rem;
+    background-color: rgb(163, 222, 196);
+}
+
+.controller label {
+    font-weight: 700;
+}
+
+.controlDeleteOptionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.controlSingleDelete {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: space-between;
+    padding: 0.8rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    background-color: lightcoral;
 }

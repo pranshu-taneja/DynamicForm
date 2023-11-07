@@ -22,8 +22,7 @@ const InputTypes = [
     name: "Radio Button",
     type: "RadioBtn",
     properties: {
-      question: "Please Select your fav Color",
-      label: "Default label for RadioButton",
+      label: "Default question label for RadioButton",
       required: false,
       options: ["Yellow", "Green", "Orange"],
     },

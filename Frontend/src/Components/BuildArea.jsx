@@ -10,7 +10,7 @@ function RenderCoreElement(name, type, properties) {
   switch (type) {
     case TextInput: {
       return (
-        <div className="TextInput">
+        <div className="TextInputCoreElement">
           <label htmlFor="TextInputID">{properties.label}</label>
           <input type="text" id="TextInputID" placeholder={properties.placeholder} />
         </div>
@@ -18,9 +18,9 @@ function RenderCoreElement(name, type, properties) {
     }
     case DropDown: {
       return (
-        <div className="DropDown">
+        <div className="DropDownCoreElement">
           <label htmlFor="DropDownID">{properties.label}</label>
-          <select name="DropDown" id="DropDownID">
+          <select name="DropDown" className="DropDownSelect" id="DropDownID" >
             {properties.options.map((val, index) => {
               return (
                 <option key={index} value={val}>{val}</option>
@@ -32,16 +32,18 @@ function RenderCoreElement(name, type, properties) {
     }
     case RadioButton: {
       return (
-        <div className="RadioButton">
-          <p>{properties.question}</p>
-          {properties.options.map((val, index) => {
-            return (
-              <div key={index}>
-                <input type="radio" id={val} name="RadioBtn" value={val} />
-                <label htmlFor={val}>{val}</label><br />
-              </div>
-            )
-          })}
+        <div className="RadioButtonCoreElement">
+          <label htmlFor="">{properties.label}</label>
+          <div className="RadioBtnOptions">
+            {properties.options.map((val, index) => {
+              return (
+                <div key={index}>
+                  <input type="radio" id={val} name="RadioBtn" value={val} />
+                  <label htmlFor={val}>{val}</label><br />
+                </div>
+              )
+            })}
+          </div>
         </div>
       )
     }
@@ -80,9 +82,8 @@ function BuildArea({ FormConfig, setFormConfig }) {
           );
         })}
       </div>
-      <div className="RenderProperties">
-        <PropertiesControllerRightBar FormConfig={FormConfig} setFormConfig={setFormConfig} activePropertyIndex={activeProperty} />
-      </div>
+      <PropertiesControllerRightBar FormConfig={FormConfig} setFormConfig={setFormConfig} activePropertyIndex={activeProperty} />
+
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import InputSelectorLeftbar from "../Components/InputSelectorLeftbar";
+import InputSelectorLeftbar from "../Components/InputSelectorLeftBar.jsx";
 import BuildArea from "../Components/BuildArea";
 import "./Styles/BuildForm.css";
 function BuildForm() {

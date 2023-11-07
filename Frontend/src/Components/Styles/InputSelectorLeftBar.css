@@ -1,0 +1,21 @@
+.InputSelectorLeftBarWrapper {
+    flex: 1 1 1.50vw;
+    background-color: chocolate;
+    height: 100vh;
+}
+
+.InputTypeContainer {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    justify-content: space-between;
+}
+
+
+
+.addBtn:hover {
+    background-color: darkgray;
+}

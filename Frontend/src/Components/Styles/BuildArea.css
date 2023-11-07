@@ -1,0 +1,35 @@
+.BuildAreaWrapper{
+    flex: 1 1 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: crimson;
+    height: 100vh;
+}
+
+.FormArea{
+    color: black;
+    background-color: white;
+    margin: 1rem;
+    flex: 0 1 40rem;
+    overflow: scroll;
+}
+
+.InputElementWrapper{
+    margin: 0.5rem;
+    border: 1px solid grey;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CoreElement{
+    padding: 0.5rem;
+}
+
+.handleConfig{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}

@@ -1,0 +1,7 @@
+.HomeWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: auto;
+    text-align: center;
+}

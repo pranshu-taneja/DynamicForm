@@ -1,4 +1,4 @@
-.PreviewWrapper {
+.mainPreviewWrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -11,11 +11,26 @@
 .navigateBuilderBtn{
     background-color: #5860d7;
 }
-.FormWrapper{
+.FormSpaceWrapper{
     background-color: white;
     box-shadow: 20px 20px 10px grey;
     width: 50vw;
     padding: 2rem;
     height: auto;
     margin: 5rem;
+}
+
+.FormWrapper{
+    color: black;
+}
+
+.FieldWrapper{
+    margin: 1rem;
+    display: flex;
+    gap: 1rem;
+    background-color: whitesmoke;
+    /* box-shadow: 3px 3px 5px darkgray; */
+    padding: 1rem;
+    align-items: start;
+    flex-direction: column;
 }

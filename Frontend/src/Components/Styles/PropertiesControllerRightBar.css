@@ -49,3 +49,11 @@
     font-weight: 700;
     background-color: lightcoral;
 }
+
+.activeRequired{
+    background-color: lightgreen;
+}
+
+.inactiveRequired{
+    background-color: lightcoral;
+}

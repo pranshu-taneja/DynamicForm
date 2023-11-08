@@ -51,6 +51,22 @@ function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setForm
     })
   }
 
+  const handleToggleRequired = () => {
+    setFormConfig((prevFormConfig) => {
+      const copyFormConfig = [...prevFormConfig];
+      const updatedProperty = { ...copyFormConfig[activePropertyIndex].properties };
+      updatedProperty.required = !updatedProperty.required;
+
+      copyFormConfig[activePropertyIndex] = {
+        ...copyFormConfig[activePropertyIndex],
+        properties: updatedProperty,
+      };
+
+      return copyFormConfig;
+    });
+  };
+
+
   //------------------- Controller Functions -------------------
 
   function RenderControllers() {
@@ -87,6 +103,11 @@ function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setForm
                 }}
               />
             </section>
+
+            <section className="controller handleRequired">
+              <label htmlFor="required">Required</label>
+              <button className={`requiredBtn ${activeProperty.required ? "activeRequired" : "inactiveRequired"}`} onClick={handleToggleRequired}>{activeProperty.required ? "true" : "false"}</button>
+            </section>
           </div>
         );
       }
@@ -121,6 +142,11 @@ function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setForm
                   handleLabel(e);
                 }}
               />
+            </section>
+
+            <section className="controller handleRequired">
+              <label htmlFor="required">Required</label>
+              <button className={`requiredBtn ${activeProperty.required ? "activeRequired" : "inactiveRequired"}`} onClick={handleToggleRequired}>{activeProperty.required ? "true" : "false"}</button>
             </section>
           </div>
         );
@@ -174,6 +200,11 @@ function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setForm
               </div>
             </section>
 
+            <section className="controller handleRequired">
+              <label htmlFor="required">Required</label>
+              <button className={`requiredBtn ${activeProperty.required ? "activeRequired" : "inactiveRequired"}`} onClick={handleToggleRequired}>{activeProperty.required ? "true" : "false"}</button>
+            </section>
+
           </div>
         );
       }
@@ -225,6 +256,10 @@ function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setForm
               </div>
             </section>
 
+            <section className="controller handleRequired">
+              <label htmlFor="required">Required</label>
+              <button className={`requiredBtn ${activeProperty.required ? "activeRequired" : "inactiveRequired"}`} onClick={handleToggleRequired}>{activeProperty.required ? "true" : "false"}</button>
+            </section>
           </div>
         );
       }
@@ -276,6 +311,10 @@ function PropertiesControllerRightBar({ activePropertyIndex, FormConfig, setForm
               </div>
             </section>
 
+            <section className="controller handleRequired">
+              <label htmlFor="required">Required</label>
+              <button className={`requiredBtn ${activeProperty.required ? "activeRequired" : "inactiveRequired"}`} onClick={handleToggleRequired}>{activeProperty.required ? "true" : "false"}</button>
+            </section>
           </div>
         );
       }

@@ -5,7 +5,7 @@ const InputTypes = [
     properties: {
       placeholder: "Default Placeholder for TextInput",
       label: "Default Label for TextInput",
-      required: true,
+      required: false,
     },
   },
   {

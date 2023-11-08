@@ -133,7 +133,8 @@ function Preview() {
     <div className='mainPreviewWrapper'>
       <div className='FormSpaceWrapper'>
         <button className='navigateBuilderBtn' onClick={navigateFormBuilder}>ChangeForm↩️</button>
-        <div className="FormWrapper">
+        <h1 hidden={formConfigState.length} style={{ color: "black" }}>No Forms Saved :(</h1>
+        <div hidden={!formConfigState.length} className="FormWrapper">
           <form onSubmit={(e) => { handleSubmit(e) }}>
             {formConfigState.map((field, index) => {
               return (
